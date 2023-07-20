@@ -8,14 +8,17 @@ function App() {
 
   const [numClics, setNumClics] = useState(0); 
 
-  const manejarClic = () => {
+  //funcion que incrementa el num de clicks en 1
+  const incrementarContador = () => {
     setNumClics(numClics + 1);
   };
 
+  //funcion que reiniciara el contador de clics en 0
   const reiniciarContador = () => {
     setNumClics(0);
   };
 
+  //retornamos el componente app que a su vez renderizara los componentes de Contador y Boton
   return (
     <div className="App">
       <div className="freecodecamp-logo-contenedor">
@@ -29,7 +32,7 @@ function App() {
         <Boton 
           texto="Clic"
           esBotonDeClic={true}
-          manejarClic={manejarClic} />
+          manejarClic={incrementarContador} />
         <Boton
           texto="Reiniciar"
           esBotonDeClic={false}
